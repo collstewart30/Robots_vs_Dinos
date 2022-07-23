@@ -6,10 +6,10 @@ from weapon import Weapon
 
 class Robot:
 
-    def __init__(self, name, weapon_passed):         #UML doesn't include weapon parameter 
+    def __init__(self, name):        
         self.name = name
         self.health = 100
-        self.active_weapon = weapon_passed
+        self.active_weapon = Weapon('Chainsaw', 15)
 
     def attack(self, dinosaur):
         self.health -= dinosaur.attack_power

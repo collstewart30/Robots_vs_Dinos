@@ -10,4 +10,4 @@ class Dinosaur:
         self.health = 100
 
     def attack(self, robot):
-        self.health -= robot.attack_power
+        self.health -= robot.active_weapon.attack_power
