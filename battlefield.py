@@ -3,6 +3,8 @@ from dinosaur import Dinosaur
 
 
 # (10 points): As a developer, I want the battle to conclude once either the robot or the dinosaur has its health points reduced to zero.
+# (10 points): As a developer, I want a Dinosaur to have the ability to attack a Robot on a Battlefield. 
+# (10 points): As a developer, I want a Robot to have the ability to attack a Dinosaur on a Battlefield.
 
 # video example: robot attachs dino with weapon for x damage, dino has x health remaining
 # then dino attacks robot for x damage, robot has x health remaining
@@ -23,7 +25,7 @@ class Battlefield:
         pass
 
     def display_winner(self):
-        if Robot(health) == 0:
+        if Robot.health == 0:
             print('Dino wins!')
         if Dinosaur(health) == 0:
             print('Robot wins!')

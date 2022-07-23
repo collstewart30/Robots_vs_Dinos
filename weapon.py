@@ -1,5 +1,5 @@
 
-# (5 points): As a developer, I want to choose from a List of 3 possible weapons before a robot makes an attack.
+# (BONUS 5 points): As a developer, I want to choose from a List of 3 possible weapons before a robot makes an attack.
 
 class Weapon:
 

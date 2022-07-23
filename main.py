@@ -10,9 +10,11 @@ battlefield_one.run_game()
 weapon_one = Weapon('Chainsaw Fingers', 15)
 
 dino_one = Dinosaur('T-Rex', 35)
-robot_one = Robot('Buzz')
+robot_one = Robot('Buzz', weapon_one)
 
 robot_one.attack(dino_one)
 print(dino_one.health)
+print(robot_one.health)
+
 
 
