@@ -1,3 +1,4 @@
+from operator import truediv
 from robot import Robot
 from dinosaur import Dinosaur
 from weapon import Weapon
@@ -9,14 +10,14 @@ from weapon import Weapon
 class Battlefield:
     
     def __init__(self):
-        self.robot = Robot('T-Rex')
-        self.dinosaur = Dinosaur('Buzz', 35)
+        self.robot = Robot('Robob')
+        self.dinosaur = Dinosaur('Rex', 35)
 
     def run_game(self):
-        self.display_welcome
-        self.battle_phase
-        self.display_winner
-                       
+        self.display_welcome()
+        self.battle_phase()
+        self.display_winner()
+
 
 # (10 points): As a developer, I want a Dinosaur to have the ability to attack a Robot on a Battlefield. 
 # (10 points): As a developer, I want a Robot to have the ability to attack a Dinosaur on a Battlefield.
@@ -27,20 +28,22 @@ class Battlefield:
         print("")
 
     def battle_phase(self):
-       
-        while self.robot.health or self.dinosaur.health > 0:
+      
+        while self.robot.health and self.dinosaur.health > 0:
             self.robot.attack(self.dinosaur)
+            print(f'{self.robot.name} attacked {self.dinosaur.name} with {self.robot.active_weapon.name} attack power of {self.robot.active_weapon.attack_power}!')
             print(f"{self.dinosaur.name}'s current health: {self.dinosaur.health}")
             self.dinosaur.attack(self.robot)
+            print(f'{self.dinosaur.name} attacked {self.robot.name} with attack power of {self.dinosaur.attack_power}!')
             print(f"{self.robot.name}'s current health: {self.robot.health}")
         else:
             self.display_winner
         
 
     def display_winner(self):
-        if self.robot.health == 0:
+        if self.robot.health <= 0:
             print(f'{self.dinosaur.name} wins!')
-        if self.dinosaurinosaur.health == 0:
+        elif self.dinosaur.health <= 0:
             print(f'{self.robot.name} wins!')
 # (10 points): As a developer, I want the battle to conclude once either the robot or the dinosaur has its health points reduced to zero.
 
