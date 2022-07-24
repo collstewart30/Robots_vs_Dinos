@@ -4,9 +4,6 @@ from dinosaur import Dinosaur
 from weapon import Weapon
 
 
-# video example: robot attacks dino with weapon for x damage, dino has x health remaining
-# then dino attacks robot for x damage, robot has x health remaining
-
 class Battlefield:
     
     def __init__(self):
@@ -24,7 +21,7 @@ class Battlefield:
 
     def display_welcome(self):
         print("")
-        print("The battle we've all been waiting for: Robots vs Dinosaurs! Who will claim victory?")    #this is the video example - change
+        print("The battle we've all been waiting for: Robots vs Dinosaurs! Who will claim victory?")   
         print("")
 
     def battle_phase(self):
