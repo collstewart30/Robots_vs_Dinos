@@ -34,15 +34,15 @@ class Battlefield:
 
         while self.robot.health and self.dinosaur.health >= 0:
             self.robot.attack(self.dinosaur)
-
             print(f'{self.robot.name} attacked {self.dinosaur.name} with {self.robot.active_weapon.name} attack power of {self.robot.active_weapon.attack_power}!')
-            print(f"{self.dinosaur.name}'s current health: {self.dinosaur.health}")
             print("")
 
             self.dinosaur.attack(self.robot)
             print(f'{self.dinosaur.name} attacked {self.robot.name} with attack power of {self.dinosaur.attack_power}!')
-            print(f"{self.robot.name}'s current health: {self.robot.health}")
             print("")
+            
+            print(f"{self.robot.name}'s current health: {self.robot.health}")
+            print(f"{self.dinosaur.name}'s current health: {self.dinosaur.health}")
         else:
             self.display_winner()
         

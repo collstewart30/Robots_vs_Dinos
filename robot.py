@@ -12,7 +12,7 @@ class Robot:
         self.active_weapon = Weapon('Laser Blaster', 15)
 
     def attack(self, dinosaur):
-        self.active_weapon.attack_power -= dinosaur.health
+        self.attack = dinosaur.health - self.active_weapon.attack_power
 
 
     
