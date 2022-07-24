@@ -32,19 +32,21 @@ class Battlefield:
         print(f"{self.dinosaur.name}'s starting health: {self.dinosaur.health}")
         print("")
 
-        while self.robot.health and self.dinosaur.health >= 0:
+        while self.robot.health >= 0 and self.dinosaur.health >= 0:
             self.robot.attack(self.dinosaur)
-            print(f'{self.robot.name} attacked {self.dinosaur.name} with {self.robot.active_weapon.name} attack power of {self.robot.active_weapon.attack_power}!')
+            print(f'{self.dinosaur.name} attacked {self.robot.name} with attack power of {self.dinosaur.attack_power}!')
             print("")
 
             self.dinosaur.attack(self.robot)
-            print(f'{self.dinosaur.name} attacked {self.robot.name} with attack power of {self.dinosaur.attack_power}!')
+            print(f'{self.robot.name} attacked {self.dinosaur.name} with {self.robot.active_weapon.name} with attack power of {self.robot.active_weapon.attack_power}!')
             print("")
+
+            if self.robot.health <0 or self.dinosaur.health <0:
+                self.display_winner
+            else:
+                print(f"{self.robot.name}'s current health: {self.robot.health}")
+                print(f"{self.dinosaur.name}'s current health: {self.dinosaur.health}")
             
-            print(f"{self.robot.name}'s current health: {self.robot.health}")
-            print(f"{self.dinosaur.name}'s current health: {self.dinosaur.health}")
-        else:
-            self.display_winner()
         
 
     def display_winner(self):
@@ -52,5 +54,6 @@ class Battlefield:
             print(f'{self.dinosaur.name} wins!')
         elif self.dinosaur.health <= 0:
             print(f'{self.robot.name} wins!')
+            
 # (10 points): As a developer, I want the battle to conclude once either the robot or the dinosaur has its health points reduced to zero.
 
