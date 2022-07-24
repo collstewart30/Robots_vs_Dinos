@@ -43,6 +43,7 @@ class Battlefield:
             else:
                 print(f"{self.robot.name}'s current health: {self.robot.health}")
                 print(f"{self.dinosaur.name}'s current health: {self.dinosaur.health}")
+                print("")
             
         
 
